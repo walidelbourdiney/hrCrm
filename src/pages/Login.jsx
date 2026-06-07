@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useFormik } from "formik";
+
+import { Formik, Form } from "formik";
 
 import loginSchema from "../validation/loginSchema";
 
@@ -7,49 +8,33 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 
 function Login() {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
+  const initialValues = {
+    email: "",
+    password: "",
+  };
 
-    validationSchema: loginSchema,
-
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+  const handleSubmit = (values) => {
+    console.log(values);
+  };
 
   return (
     <div className="auth-page">
       <div className="auth-card">
         <h1>Sign In</h1>
 
-        <form onSubmit={formik.handleSubmit}>
-          <Input
-            label="Email"
-            name="email"
-            type="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={formik.errors.email}
-            touched={formik.touched.email}
-          />
+        <Formik
+          initialValues={initialValues}
+          validationSchema={loginSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form>
+            <Input label="Email" name="email" type="email" />
 
-          <Input
-            label="Password"
-            name="password"
-            type="password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            error={formik.errors.password}
-            touched={formik.touched.password}
-          />
+            <Input label="Password" name="password" type="password" />
 
-          <Button type="submit">Sign In</Button>
-        </form>
+            <Button type="submit">Sign In</Button>
+          </Form>
+        </Formik>
 
         <p className="auth-link">
           Don't have an account?
