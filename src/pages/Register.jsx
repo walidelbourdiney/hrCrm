@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Formik, Form } from "formik";
 
@@ -9,6 +9,7 @@ import Button from "../components/Button";
 import AuthLayout from "../components/AuthLayout";
 
 function Register() {
+  const navigate = useNavigate();
   const initialValues = {
     name: "",
     email: "",
@@ -20,6 +21,9 @@ function Register() {
     console.log(values);
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    navigate("/dashboard");
+    console.log("User Registered");
   };
 
   return (
