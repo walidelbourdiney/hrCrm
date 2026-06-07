@@ -1,0 +1,22 @@
+:root {
+  --primary: #4d73c7;
+  --primary-dark: #354f8c;
+
+  --accent: #f0a04b;
+
+  --success: #4caf65;
+  --danger: #f44336;
+
+  --bg: #f4f6f9;
+
+  --sidebar: #2f3447;
+
+  --white: #ffffff;
+
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+
+  --radius: 12px;
+
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
