@@ -22,7 +22,7 @@ function Register() {
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    navigate("/dashboard");
+    navigate("/");
     console.log("User Registered");
   };
 

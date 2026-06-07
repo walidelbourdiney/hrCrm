@@ -1,22 +1,64 @@
 :root {
-  --primary: #4d73c7;
-  --primary-dark: #354f8c;
+  /* =========================
+     BRAND
+  ========================= */
+
+  --primary: #4f7cff;
+  --primary-dark: #3f63cc;
+  --primary-light: #eaf0ff;
 
   --accent: #f0a04b;
 
-  --success: #4caf65;
-  --danger: #f44336;
+  /* =========================
+     STATUS
+  ========================= */
 
-  --bg: #f4f6f9;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
 
-  --sidebar: #2f3447;
+  /* =========================
+     BACKGROUNDS
+  ========================= */
 
-  --white: #ffffff;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #f8fafc;
 
-  --text-primary: #212529;
-  --text-secondary: #6c757d;
+  --sidebar: #1e293b;
+  --sidebar-hover: #334155;
 
-  --radius: 12px;
+  /* =========================
+     TEXT
+  ========================= */
 
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  /* =========================
+     BORDERS
+  ========================= */
+
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* =========================
+     SHADOWS
+  ========================= */
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
 }
