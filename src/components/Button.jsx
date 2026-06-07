@@ -1,7 +1,12 @@
-function Button({ type = "button", children, disabled = false }) {
+function Button({
+  type = "button",
+  children,
+  disabled = false,
+  loading = false,
+}) {
   return (
-    <button type={type} disabled={disabled} className="btn">
-      {children}
+    <button type={type} disabled={disabled || loading} className="btn">
+      {loading ? "Please wait..." : children}
     </button>
   );
 }

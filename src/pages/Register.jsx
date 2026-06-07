@@ -6,6 +6,7 @@ import registerSchema from "../validation/registerSchema";
 
 import Input from "../components/Input";
 import Button from "../components/Button";
+import AuthLayout from "../components/AuthLayout";
 
 function Register() {
   const initialValues = {
@@ -15,20 +16,26 @@ function Register() {
     confirmPassword: "",
   };
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     console.log(values);
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <h1>Create Account</h1>
-
-        <Formik
-          initialValues={initialValues}
-          validationSchema={registerSchema}
-          onSubmit={handleSubmit}
-        >
+    <AuthLayout title="Create Account" subtitle="Join us today">
+      <Formik
+        initialValues={initialValues}
+        validationSchema={registerSchema}
+        onSubmit={async (values, { setSubmitting }) => {
+          try {
+            await handleSubmit(values);
+          } finally {
+            setSubmitting(false);
+          }
+        }}
+      >
+        {(formik) => (
           <Form>
             <Input label="Full Name" name="name" />
 
@@ -42,16 +49,18 @@ function Register() {
               type="password"
             />
 
-            <Button type="submit">Create Account</Button>
+            <Button type="submit" loading={formik.isSubmitting}>
+              Create Account
+            </Button>
           </Form>
-        </Formik>
+        )}
+      </Formik>
 
-        <p className="auth-link">
-          Already have an account?
-          <Link to="/">Sign In</Link>
-        </p>
-      </div>
-    </div>
+      <p className="auth-link">
+        Already have an account?
+        <Link to="/">Sign In</Link>
+      </p>
+    </AuthLayout>
   );
 }
 
