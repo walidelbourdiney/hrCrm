@@ -4,8 +4,8 @@ import { Formik, Form } from "formik";
 
 import loginSchema from "../validation/loginSchema";
 
-import Input from "../components/Input";
-import Button from "../components/Button";
+import Input from "../components/ui/Input";
+import Button from "../components/ui/Button";
 import AuthLayout from "../components/AuthLayout";
 // import useAuthStore from "../store/authStore";
 import useAuthStore from "../store/authStore";
