@@ -6,7 +6,7 @@ import registerSchema from "../validation/registerSchema";
 
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
-import AuthLayout from "../components/AuthLayout";
+import AuthLayout from "../components/layouts/AuthLayout";
 
 function Register() {
   const navigate = useNavigate();
